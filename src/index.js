@@ -6,6 +6,12 @@ import AppRouter from './routers/AppRouter'
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import {createStore} from 'redux'
+const store = createStore((state = {count:0})=>{
+    return state;
+})
+
+console.log(store.getState())
 
 ReactDOM.render(<AppRouter/>, document.getElementById('root'));
 

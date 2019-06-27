@@ -4,14 +4,10 @@ import './Styles/index.scss';
 import AppRouter from './routers/AppRouter'
 // import 'normalize.css/normalize.css';
 // import App from './App';
+import configurationStore from './store/configureStore'
 import * as serviceWorker from './serviceWorker';
 
-import {createStore} from 'redux'
-const store = createStore((state = {count:0})=>{
-    return state;
-})
-
-console.log(store.getState())
+const store = configurationStore()
 
 ReactDOM.render(<AppRouter/>, document.getElementById('root'));
 

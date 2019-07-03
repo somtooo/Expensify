@@ -4,23 +4,23 @@ import {Provider} from 'react-redux';
 import './Styles/index.scss';
 import AppRouter from './routers/AppRouter'
 import 'normalize.css/normalize.css';
-import store from './store/configureStore'
+import configureStore from './store/configureStore'
 import  * as Action from './actions/expenses'
 import * as serviceWorker from './serviceWorker';
 import getVisibleExpenses from "./selectors/expenses";
 
-const s = store();
+const store = configureStore();
 
-s.dispatch(Action.addExpense({description: 'Water bill', amount:400}));
-s.dispatch(Action.addExpense({description: 'Gas bill', amount:500}));
-s.dispatch(Action.setTextFilter("water"));
+store.dispatch(Action.addExpense({description: 'Water bill', amount:400}));
+store.dispatch(Action.addExpense({description: 'Gas bill', amount:500}));
+store.dispatch(Action.setTextFilter("water"));
 
-const state = s.getState();
+const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expense, state.filter);
 console.log(visibleExpenses);
 
 const jsx = (
-    <Provider store={s}>
+    <Provider store={store}>
         <AppRouter />
     </Provider>
 );

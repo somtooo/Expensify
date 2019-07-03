@@ -8,9 +8,9 @@ const ExpenseList = (props) =>(
     </div>
 );
 
-const mapStateToProps = (s) =>{
+const mapStateToProps = (store) =>{
     return{
-        expenses: s.expense
+        expenses: store.expense
     }
 }
 

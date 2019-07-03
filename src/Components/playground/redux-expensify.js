@@ -62,6 +62,8 @@ const setEndDate = (date)=>({
     type:'SET_END_DATE',
     date
 });
+
+
 //Expenses Reducer
 const expensesReducerDefaultState = [];
 const expensesReducer = (state = expensesReducerDefaultState, action) =>{
@@ -82,10 +84,10 @@ const expensesReducer = (state = expensesReducerDefaultState, action) =>{
 };
 //Filter Reducer
 const filterReducerDefaultState = {
-    text: '',
-    sortBy: '', //date or amount
-    startDate: undefined,
-    endDate: undefined
+        text: '',
+        sortBy: '', //date or amount
+        startDate: undefined,
+        endDate: undefined
 };
 
 const filterReducer = (state = filterReducerDefaultState, action)=>{
